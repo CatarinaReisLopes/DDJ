@@ -7,6 +7,7 @@ TagManager:
   - Box
   - Link
   - Ground
+  - LinkBall
   layers:
   - Default
   - TransparentFX
