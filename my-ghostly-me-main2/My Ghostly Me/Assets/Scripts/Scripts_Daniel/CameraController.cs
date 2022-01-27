@@ -8,28 +8,37 @@ public class CameraController : MonoBehaviour
 
     //public CinemachineBrain brain;
     public CinemachineVirtualCamera camera;
-    public Transform toyPosition;
-    Transform ghostPosition;
+    
+    //SpawnGhost sg;
+    GameObject toyBeingControlled;
 
     // Update is called once per frame
     void Start(){
-        ghostPosition = camera.m_Follow;
+        
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Q)){
-            camera.m_Follow = ghostPosition;
-        }
+       /* if(Input.GetKey(KeyCode.Q)){
+            camera.m_Follow = initialGhostPosition;
+        }*/
         
     }
 
-    public void ControlToy(){
-        camera.m_Follow = toyPosition;
+    public void ControlToy(Transform toyAround){
+        toyBeingControlled = toyAround.gameObject;
+        ToyMovement toyMovementStatus = toyBeingControlled.GetComponent(typeof(ToyMovement)) as ToyMovement;
+        camera.m_Follow = toyAround;
+        toyMovementStatus.enabled = true;
+
     }
 
-    public void GoBackToGhost(){
-        camera.m_Follow = ghostPosition;
+    public void ControlGhost(SpawnGhost sg){
+        //sg = this.transform.parent.FindChild("SpawnGhostLocation").GetComponent(typeof(SpawnGhost)) as SpawnGhost;
+        ToyMovement toyMovementStatus = toyBeingControlled.GetComponent(typeof(ToyMovement)) as ToyMovement;
+        camera.m_Follow = sg.GetGhostSpawnedPosition();
+        toyMovementStatus.enabled = false;
+
     }
     
 }

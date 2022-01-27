@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - LinkBall
   - ground
+  - Toy
+  - DangerousObject
   layers:
   - Default
   - TransparentFX

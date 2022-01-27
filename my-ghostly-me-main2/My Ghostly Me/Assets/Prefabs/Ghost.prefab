@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3974439800743259121}
   - component: {fileID: 3974439800743259120}
   - component: {fileID: 3974439800743259127}
+  - component: {fileID: 6112012099262082766}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Player
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: -791550626, guid: abfa275d35daf614eaf89d8c3c49b437, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,7 +129,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3974439800743259120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +188,16 @@ PolygonCollider2D:
       - {x: -0.14, y: -0.125}
       - {x: -0.11, y: -0.13499999}
       - {x: 0.11, y: -0.13499999}
+--- !u!114 &6112012099262082766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165183208952797706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70c21d469dc04cc9b9e2705ac118175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3974439800743259123}
