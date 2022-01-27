@@ -7,13 +7,13 @@ public class ActivateStares : MonoBehaviour
     public GameObject escadaria;
 
     public Collider2D ball;
+    public Collider2D cesto;
 
-    private void OnTriggerEnter2D (Collider2D collider){
-        //GameObject objectToDestroy = GameObject.FindGameObjectWithTag("LinkBall");
-    
 
-        if(collider.IsTouching(ball)){
+    void Update(){
+        if(cesto.IsTouching(ball)){
             escadaria.SetActive(true);
         }
     }
+
 }
